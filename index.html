@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-store">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Survey Data Processing &amp; Crosstabs | Freelance MR Specialist</title>
+<meta name="description" content="Freelance data processing for market research — cleaning, validation, weighting, crosstabs and chart packs. SPSS, WinCross, Q and Decipher. 6+ years in quantitative primary research.">
+<meta property="og:title" content="From raw survey data to research-ready tables">
+<meta property="og:description" content="Cleaning, weighting, crosstabs and chart packs for market research agencies and independent consultants.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:image" content="og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="From raw survey data to research-ready tables">
+<meta name="twitter:description" content="Cleaning, weighting, crosstabs and chart packs for market research agencies and independent consultants.">
+<meta name="twitter:image" content="og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/tokens.css?v=20260922192009">
+<link rel="stylesheet" href="css/base.css?v=20260922192009">
+<link rel="stylesheet" href="css/layout.css?v=20260922192009">
+<link rel="stylesheet" href="css/components.css?v=20260922192009">
+</head>
+<body>
+
+<a class="skip-link" href="#hero">Skip to content</a>
+
+<div class="statusbar" aria-hidden="true">
+  <span class="live">Session live</span>
+  <span class="sb-item">Dataset: demo · n=47</span>
+  <span class="spacer"></span>
+  <span class="sb-item" id="sb-clock">--:--</span>
+  <span class="sb-item">IST · UTC+5:30</span>
+</div>
+
+<div class="rail rail-l" aria-hidden="true">
+  <span class="tickmark top"></span>
+  <span class="rail-text">HeyData · survey data processing · Delhi IST</span>
+  <span class="tickmark bot"></span>
+</div>
+<div class="rail rail-r" aria-hidden="true">
+  <span class="tickmark top"></span>
+  <span class="rail-readout" id="rail-pct">00%</span>
+  <span class="rail-text">scroll depth</span>
+  <span class="rail-progress"><i id="rail-fill"></i></span>
+  <span class="rail-sec" id="rail-sec">hero</span>
+  <span class="tickmark bot"></span>
+</div>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#hero">Hey<span>Data</span></a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#live">Live Data</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li class="nav-cta-li"><a class="btn btn-primary" href="#contact">Start a project</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary nav-cta" href="#contact">Start a project</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menu"></button>
+  </div>
+</header>
+
+<main>
+
+<section id="hero" class="hero">
+  <canvas class="hero-ambient" id="hero-ambient" aria-hidden="true"></canvas>
+  <div class="container hero-grid">
+
+    <div class="hero-copy">
+      <div class="boot" id="boot" aria-hidden="true">
+        <span class="boot-line" data-text="> mounting dataset · wave_4.sav"></span>
+        <span class="boot-line" data-text="> 847 responses · 112 variables"></span>
+        <span class="boot-line" data-text="> qc: 65 flagged · removed"></span>
+      </div>
+
+      <p class="eyebrow">Primary research · Survey data · QC</p>
+
+      <h1 class="hero-title">
+        <span class="t-live">
+          <span class="t-dim">From</span>
+          <span class="t-cycle" id="cycle" aria-label="raw survey data">raw survey data</span>
+          <span class="t-dim">to</span>
+          <span class="t-hot">research-ready tables</span><span class="cursor" aria-hidden="true"></span>
+        </span>
+      </h1>
+
+      <p class="lead">Cleaning, validation, weighting, tabulation and QC for quantitative market research. Your format, your template, your deadline.</p>
+
+      <dl class="hero-meta" aria-hidden="true">
+        <div><dt>Rows cleaned</dt><dd data-roll="184000">0</dd></div>
+        <div><dt>Tables built</dt><dd data-roll="2400">0</dd></div>
+        <div><dt>Years</dt><dd data-roll="6" data-suffix="+">0</dd></div>
+      </dl>
+
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#contact">Start a project</a>
+        <a class="btn btn-ghost" href="#process">See how I work</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <figure class="crosstab" aria-labelledby="ct-question">
+        <figcaption class="crosstab-head">
+          <h2 id="ct-question" class="crosstab-question">What slows research projects down the most?</h2>
+          <button class="sound-toggle" type="button" aria-pressed="false" aria-label="Sound off">Sound off</button>
+        </figcaption>
+
+        <ul class="banner" role="tablist" aria-label="Cut by firm type">
+          <li role="presentation"><button class="pill" role="tab" type="button" data-group="small" aria-selected="true">Agency 1–10</button></li>
+          <li role="presentation"><button class="pill" role="tab" type="button" data-group="mid" aria-selected="false">Agency 11–50</button></li>
+          <li role="presentation"><button class="pill" role="tab" type="button" data-group="inhouse" aria-selected="false">In-house / Solo</button></li>
+        </ul>
+
+        <div class="chart" id="hero-chart">
+          <canvas id="hero-canvas" width="640" height="360" role="img" aria-label="Bar chart of research bottlenecks"></canvas>
+          <noscript>
+            <table class="chart-fallback">
+              <caption>Biggest bottleneck, by firm type (demo dataset, n=47)</caption>
+              <thead><tr><th scope="col">Bottleneck</th><th scope="col">Agency 1–10</th><th scope="col">Agency 11–50</th><th scope="col">In-house / Solo</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Data processing turnaround</th><td>61%</td><td>34%</td><td>29%</td></tr>
+                <tr><th scope="row">Data quality &amp; QC issues</th><td>22%</td><td>28%</td><td>18%</td></tr>
+                <tr><th scope="row">Scripting &amp; logic changes</th><td>11%</td><td>21%</td><td>9%</td></tr>
+                <tr><th scope="row">Reporting &amp; chart prep</th><td>6%</td><td>17%</td><td>44%</td></tr>
+              </tbody>
+            </table>
+          </noscript>
+        </div>
+
+        <p class="takeaway" id="takeaway" aria-live="polite">For agencies of 1–10, data processing is the biggest bottleneck — 61% vs 34% at larger agencies.</p>
+        <p class="base" id="chart-base">n=47 · demo dataset · updated Sep 2026</p>
+
+        <button class="poll-open" type="button" aria-expanded="false" aria-controls="poll">Add your answer → see how you compare</button>
+
+        <form class="poll" id="poll" hidden>
+          <fieldset>
+            <legend>What slows your projects down the most?</legend>
+            <label><input type="radio" name="answer" value="dp"> Data processing turnaround</label>
+            <label><input type="radio" name="answer" value="qc"> Data quality &amp; QC issues</label>
+            <label><input type="radio" name="answer" value="script"> Scripting &amp; logic changes</label>
+            <label><input type="radio" name="answer" value="report"> Reporting &amp; chart prep</label>
+          </fieldset>
+          <label for="poll-group">Your team</label>
+          <select id="poll-group" name="group">
+            <option value="small">Agency 1–10</option>
+            <option value="mid">Agency 11–50</option>
+            <option value="inhouse">In-house / Solo</option>
+          </select>
+          <button class="btn btn-primary" type="submit">Add my answer</button>
+          <p class="poll-msg" role="status"></p>
+        </form>
+      </figure>
+    </div>
+
+  </div>
+  <a class="scroll-cue" href="#services" aria-label="Scroll to services"><span></span>scroll</a>
+</section>
+
+<section id="services" class="section reveal" data-index="01 / 06">
+  <div class="container">
+    <p class="eyebrow">What I do</p>
+    <h2>Everything between raw data and the deck</h2>
+    <p class="lead">Eight things I do, usually as one pipeline — but you can take any single piece.</p>
+
+    <ul class="grid grid-services">
+      <li class="service">
+        <span class="num">01</span>
+        <h3>Data cleaning</h3>
+        <p>Duplicates, straightliners, speeders, missing values and open-end tidying — with a short QC note on exactly what was removed and why.</p>
+        <div class="viz" aria-hidden="true"></div>
+      </li>
+      <li class="service">
+        <span class="num">02</span>
+        <h3>Formatting &amp; labelling</h3>
+        <p>Clean value labels, consistent coding and a variable structure that opens correctly in SPSS, Excel, Q or your platform export.</p>
+        <div class="viz" aria-hidden="true"></div>
+      </li>
+      <li class="service">
+        <span class="num">03</span>
+        <h3>Validation &amp; QC</h3>
+        <p>Quota checks, logic checks, outlier flags and inconsistency reports — before anything gets analysed.</p>
+        <div class="viz" aria-hidden="true"></div>
+      </li>
+      <li class="service">
+        <span class="num">04</span>
+        <h3>Logic &amp; routing testing</h3>
+        <p>Skip patterns, branching and piping tested against the questionnaire, so every respondent took the path they should have.</p>
+        <div class="viz" aria-hidden="true"></div>
+      </li>
+      <li class="service">
+        <span class="num">05</span>
+        <h3>Weighting</h3>
+        <p>RIM and post-stratification weighting to your target profile, with the efficiency and extreme-weight checks that come with it.</p>
+        <div class="viz" aria-hidden="true"></div>
+      </li>
+      <li class="service">
+        <span class="num">06</span>
+        <h3>Cross-tabulation</h3>
+        <p>Full banner sets with significance testing, nets, means and indices — in your house table format, not mine.</p>
+        <div class="viz" aria-hidden="true"></div>
+      </li>
+      <li class="service">
+        <span class="num">07</span>
+        <h3>Chart packs</h3>
+        <p>Excel and PowerPoint charts built to your template and brand, ready to drop into the client deck.</p>
+        <div class="viz" aria-hidden="true"></div>
+      </li>
+      <li class="service">
+        <span class="num">08</span>
+        <h3>Report preparation</h3>
+        <p>Summary tables, topline decks and the written read-through that turns the numbers into a finding.</p>
+        <div class="viz" aria-hidden="true"></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="live" class="section reveal" data-index="02 / 06">
+  <div class="container">
+    <p class="eyebrow">Live data</p>
+    <h2>The same data, cut three ways</h2>
+    <p class="lead">This is the part clients actually pay for — not the chart, but the cut underneath it. Switch between views to see it move.</p>
+
+    <ul class="tabs" role="tablist" aria-label="Chart views">
+      <li role="presentation"><button class="tab" role="tab" type="button" data-view="trend" aria-selected="true">Trend</button></li>
+      <li role="presentation"><button class="tab" role="tab" type="button" data-view="segmentation" aria-selected="false">Segmentation</button></li>
+      <li role="presentation"><button class="tab" role="tab" type="button" data-view="crosstab" aria-selected="false">Crosstab index</button></li>
+    </ul>
+
+    <div class="chart chart-lg" id="live-chart">
+      <canvas id="live-canvas" width="960" height="480" role="img" aria-label="Demo analysis chart"></canvas>
+    </div>
+    <p class="base" id="live-note">Shaded band = 95% CI · gap vs category labelled at the latest wave</p>
+    <p class="base">Demo dataset, synthetic. Built the same way I'd build yours.</p>
+  </div>
+</section>
+
+<section id="process" class="section reveal" data-index="03 / 06">
+  <div class="container">
+    <p class="eyebrow">How it works</p>
+    <h2>Four steps, no surprises</h2>
+    <p class="lead">You'll know what's happening at each stage, and what you're getting at the end of it.</p>
+
+    <ol class="pipeline" id="pipeline">
+      <span class="pipe-rail" aria-hidden="true"></span>
+      <span class="pipe-packet" id="pipe-packet" aria-hidden="true"></span>
+      <li class="step">
+        <span class="step-node" aria-hidden="true">01</span>
+        <div>
+          <h3>Brief &amp; audit</h3>
+          <p>You send the data and the banner plan. I open the file, check the structure against the questionnaire, and come back with anything that looks off — usually within a day.</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-node" aria-hidden="true">02</span>
+        <div>
+          <h3>Clean &amp; validate</h3>
+          <p>Cleaning, logic checks and QC. You get the clean file plus a short note listing what was removed, flagged or recoded.</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-node" aria-hidden="true">03</span>
+        <div>
+          <h3>Weight &amp; tabulate</h3>
+          <p>Weighting to your targets, then the full banner set with significance testing — in your table format.</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-node" aria-hidden="true">04</span>
+        <div>
+          <h3>Charts &amp; handover</h3>
+          <p>Chart pack in your template, final files, and a walkthrough of anything worth flagging in the data.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="about" class="section reveal" data-index="04 / 06">
+  <div class="container about-grid">
+    <div>
+      <p class="eyebrow">About</p>
+      <h2>One person, the whole pipeline</h2>
+      <p>I'm Amjad, a research analyst based in India. For over six years I've worked on quantitative primary research — data processing, tabulation and reporting for agencies running trackers, U&amp;A studies, segmentations and brand work.</p>
+      <p>I work the way an in-house DP team works, but as a single named person. You brief one person, that person does the work, and that person answers your questions about it.</p>
+      <p>Most of my clients are small agencies and independent consultants who have more fieldwork than processing capacity. I work white-label: your template, your branding, and your client never needs to know I was involved.</p>
+    </div>
+    <div>
+      <dl class="stats">
+        <div><dd class="stat-v" data-count="6" data-suffix="+">0</dd><dt class="stat-k">Years in quant MR</dt></div>
+        <div><dd class="stat-v" data-count="6">0</dd><dt class="stat-k">Tools in the stack</dt></div>
+        <div><dd class="stat-v" data-count="48" data-suffix="h">0</dd><dt class="stat-k">Typical first reply</dt></div>
+        <div><dd class="stat-v" data-count="1">0</dd><dt class="stat-k">Person on your file</dt></div>
+      </dl>
+
+      <ul class="ticks">
+        <li>Agency-standard QC on every deliverable</li>
+        <li>Your table format and template, not a generic one</li>
+        <li>White-label by default</li>
+        <li>Overlap with UK, European and Gulf working hours</li>
+        <li>NDA before anything starts, if you want one</li>
+      </ul>
+      <p class="tools">SPSS · WinCross · Q · Decipher · Power BI · Excel · PowerPoint</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="section reveal" data-index="05 / 06">
+  <div class="container container-narrow">
+    <p class="eyebrow">FAQ</p>
+    <h2>Common questions</h2>
+
+    <details class="faq-item">
+      <summary>Which tools do you work in?</summary>
+      <p>SPSS, WinCross, Q, Decipher, Power BI and Excel. I deliver in your format — if your tables come out of a specific system, send me an old set and I'll match it.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What's your turnaround?</summary>
+      <p>Small jobs — cleaning, a short banner set — usually 2 to 3 working days. Full studies with weighting and a chart pack, 5 to 10. Rush work is possible if you tell me early.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How do you handle messy data?</summary>
+      <p>Audit first. I'd rather spend an hour understanding the structure than fix the same problem four times later. You get a written note of every decision made on the file.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Do you work white-label?</summary>
+      <p>Yes, by default. Your template, your branding, no mention of me anywhere in the deliverable.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What about confidentiality?</summary>
+      <p>Your data stays on one encrypted machine. It never goes into any cloud AI tool. I delete project files 30 days after handover, and I'm happy to sign an NDA before you send anything.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How do you price?</summary>
+      <p>Per project, not hourly. Tell me the number of completes, the banner size and what you need at the end, and you'll get a fixed quote — usually the same day.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What do you need to start?</summary>
+      <p>The data file, the questionnaire and the banner plan. If the banner plan doesn't exist yet, I can draft one from the questionnaire.</p>
+    </details>
+  </div>
+</section>
+
+<section id="contact" class="section reveal" data-index="06 / 06">
+  <div class="container contact-grid">
+    <div>
+      <p class="eyebrow">Get in touch</p>
+      <h2>Send me a file and a deadline</h2>
+      <p class="lead">Tell me what the study is and what you need at the end of it. You'll get a clear scope and a fixed quote back, usually within a day.</p>
+
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="need">What do you need?</label>
+          <select id="need" name="need">
+            <option value="cleaning">Data cleaning &amp; QC</option>
+            <option value="weighting">Weighting</option>
+            <option value="crosstabs">Crosstabs</option>
+            <option value="charts">Chart pack</option>
+            <option value="full">Full pipeline</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="project">Tell me about the project</label>
+          <textarea id="project" name="project" rows="5"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Send</button>
+        <p class="form-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <aside class="contact-details">
+      <dl>
+        <dt>Email</dt>
+        <dd><a href="mailto:amjadalimugni@gmail.com">amjadalimugni@gmail.com</a></dd>
+        <dt>Based in</dt>
+        <dd>India — working with UK, Europe, Gulf and Australia</dd>
+        <dt>Availability</dt>
+        <dd>Taking on projects this month</dd>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>HeyData — survey data processing for market research.</p>
+    <ul class="footer-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <p class="small">© 2026 · <a href="mailto:amjadalimugni@gmail.com">amjadalimugni@gmail.com</a></p>
+  </div>
+</footer>
+
+<script type="module" src="js/main.js?v=20260922192009"></script>
+</body>
+</html>
