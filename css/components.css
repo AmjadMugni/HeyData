@@ -164,7 +164,16 @@
 
 .chart { position: relative; width: 100%; }
 .chart canvas { width: 100%; height: auto; }
-.chart-lg { margin-block: var(--space-6); }
+.chart-lg {
+  margin-block: var(--space-6);
+  padding: var(--space-6);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
 
 .takeaway {
   margin: var(--space-3) 0 var(--space-1);

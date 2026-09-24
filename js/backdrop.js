@@ -57,8 +57,9 @@ export function createBackdrop(section, opts = {}) {
     const layer = pick([0, 1, 1, 2]);              // 0 = door, 2 = paas
     const kind = kindFor();
     const scale = [0.72, 1, 1.35][layer];
+    const tint = pick(['--blue', '--purple', '--pink', '--teal', '--ink-dim', '--ink-dim']);
     return {
-      kind, layer, scale,
+      kind, layer, scale, tint: css(tint),
       x: Math.random() * W,
       y: initial ? Math.random() * H : H + rnd(20, 120),
       vy: -(0.04 + Math.random() * 0.13) * (0.6 + layer * 0.45),
@@ -106,16 +107,18 @@ export function createBackdrop(section, opts = {}) {
   /* ---- har kism ka apna drawing ---- */
 
   function drawItem(it, a) {
-    const green = css('--green'), faint = css('--ink-faint'), amber = css('--amber');
+    const green = css('--green'), faint = css('--ink-dim'), amber = css('--amber');
     const prog = it.life / it.max;
     const locked = prog > it.lockAt && prog < it.lockAt + 0.06;
-    const col = locked ? green : (it.hot ? green : faint);
+    const col = locked ? green : (it.hot ? green : it.tint);
     const s = it.scale;
 
-    ctx.globalAlpha = a * (locked ? 1.7 : 1);
+    ctx.globalAlpha = a * (locked ? 1.8 : 1);
     ctx.fillStyle = col;
     ctx.strokeStyle = col;
     ctx.lineWidth = 1;
+    ctx.shadowColor = col;
+    ctx.shadowBlur = locked ? 12 : 5;
     ctx.font = `400 ${Math.round(12 * s)}px ${css('--font-mono')}`;
 
     switch (it.kind) {
@@ -199,6 +202,7 @@ export function createBackdrop(section, opts = {}) {
       }
     }
     ctx.globalAlpha = 1;
+    ctx.shadowBlur = 0;
   }
 
   function frame() {

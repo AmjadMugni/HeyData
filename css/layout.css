@@ -123,6 +123,21 @@
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--line) 20%, var(--line) 80%, transparent);
 }
+
+/* ---- ambient section glow — hero jaisa hi jazba, halka, har section ka apna rang ---- */
+.section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+#services::after { background: radial-gradient(50% 40% at 85% 0%, color-mix(in srgb, var(--blue) 10%, transparent), transparent 70%); }
+#live::after     { background: radial-gradient(55% 45% at 10% 15%, color-mix(in srgb, var(--purple) 11%, transparent), transparent 70%); }
+#process::after  { background: radial-gradient(50% 40% at 90% 20%, color-mix(in srgb, var(--pink) 9%, transparent), transparent 70%); }
+#about::after    { background: radial-gradient(55% 45% at 5% 80%, color-mix(in srgb, var(--teal) 9%, transparent), transparent 70%); }
+#faq::after      { background: radial-gradient(50% 40% at 90% 60%, color-mix(in srgb, var(--blue) 8%, transparent), transparent 70%); }
+#contact::after  { background: radial-gradient(55% 45% at 10% 30%, color-mix(in srgb, var(--purple) 10%, transparent), transparent 70%); }
 .section-head { margin-bottom: var(--space-12); }
 
 /* ---- hero ---- */
