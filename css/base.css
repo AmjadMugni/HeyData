@@ -7,6 +7,10 @@ html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 body {
   margin: 0;
   background: var(--bg-deep);
+  background-image:
+    radial-gradient(60% 40% at 15% 0%, color-mix(in srgb, var(--blue) 7%, transparent), transparent 70%),
+    radial-gradient(50% 35% at 100% 30%, color-mix(in srgb, var(--purple) 6%, transparent), transparent 70%);
+  background-attachment: fixed;
   color: var(--ink);
   font-family: var(--font-body);
   font-size: var(--fs-body);
@@ -23,19 +27,18 @@ h1, h2, h3 {
 h1 {
   font-size: var(--fs-h1);
   font-weight: 600;
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
 }
 h2 {
   font-size: var(--fs-h2);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.12;
   letter-spacing: -0.02em;
 }
 h3 {
   font-size: var(--fs-h3);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.35;
   letter-spacing: -0.01em;
 }
@@ -70,9 +73,10 @@ input, select, textarea { font: inherit; color: inherit; }
 .eyebrow::before {
   content: '';
   width: 6px; height: 6px;
+  border-radius: 50%;
   background: var(--green);
   flex: none;
-  box-shadow: 0 0 10px var(--green);
+  box-shadow: 0 0 12px 2px var(--green);
 }
 
 .lead {
@@ -119,6 +123,7 @@ input, select, textarea { font: inherit; color: inherit; }
   padding: var(--space-3) var(--space-4);
   background: var(--green);
   color: var(--bg-deep);
+  border-radius: var(--radius-sm);
   font-family: var(--font-mono);
   font-weight: 600;
   transition: top var(--dur-micro) var(--ease-out);

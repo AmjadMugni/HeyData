@@ -1,15 +1,15 @@
 // HeyData — entry
 
-import { createChart } from './chart.js?v=20260922192009';
-import { createLive } from './live.js?v=20260922192009';
-import { initPoll } from './poll.js?v=20260922192009';
-import { takeaway, DATA } from './data.js?v=20260922192009';
-import * as audio from './audio.js?v=20260922192009';
-import { createAmbient } from './ambient.js?v=20260922192009';
-import { initClock, initPipeline, initCounters, initReveal, initRails } from './sections.js?v=20260922192009';
-import { initServiceVisuals } from './services.js?v=20260922192009';
-import { createBackdrop } from './backdrop.js?v=20260922192009';
-import { bootLog, cycleHeadline, rollCounters } from './hero.js?v=20260922192009';
+import { createChart } from './chart.js?v=20260924162000';
+import { createLive } from './live.js?v=20260924162000';
+import { initPoll } from './poll.js?v=20260924162000';
+import { takeaway, DATA } from './data.js?v=20260924162000';
+import * as audio from './audio.js?v=20260924162000';
+import { createAmbient } from './ambient.js?v=20260924162000';
+import { initClock, initPipeline, initCounters, initReveal, initRails } from './sections.js?v=20260924162000';
+import { initServiceVisuals } from './services.js?v=20260924162000';
+import { createBackdrop } from './backdrop.js?v=20260924162000';
+import { bootLog, cycleHeadline, rollCounters } from './hero.js?v=20260924162000';
 
 const $ = s => document.querySelector(s);
 const $$ = s => Array.from(document.querySelectorAll(s));

@@ -1,6 +1,6 @@
 // HeyData — hero ka hook: boot log, badalti hui headline, counters.
 
-import * as audio from './audio.js?v=20260922192009';
+import * as audio from './audio.js?v=20260924162000';
 
 const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const CHARS = '0123456789<>/+=|';   // sirf narrow glyphs — reserve height kam rehti hai

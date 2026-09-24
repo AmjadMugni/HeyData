@@ -2,7 +2,7 @@
 // Teen cuts ek hi canvas pe, aur switch karne par marks ud kar nayi shape banate hain:
 // trend ke points -> bars -> crosstab ke cells. Hover pe readout milta hai.
 
-import { LIVE } from './data.js?v=20260922192009';
+import { LIVE } from './data.js?v=20260924162000';
 
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -222,14 +222,19 @@ export function createLive(canvas) {
       ctx.closePath(); ctx.fill();
     });
 
-    // lines
+    // lines — glowing neon stroke
     d.series.forEach((s, si) => {
-      ctx.strokeStyle = css(si === 0 ? '--series-1' : '--series-2');
-      ctx.lineWidth = 2.25;
+      const col = css(si === 0 ? '--series-1' : '--series-2');
+      ctx.strokeStyle = col;
+      ctx.lineWidth = 2.5;
       ctx.lineJoin = 'round';
+      ctx.lineCap = 'round';
+      ctx.shadowColor = col;
+      ctx.shadowBlur = 14;
       ctx.beginPath();
       s.values.forEach((v, i) => { const x = X(i), y = Y(v); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); });
       ctx.stroke();
+      ctx.shadowBlur = 0;
     });
     ctx.restore();
 
@@ -373,13 +378,15 @@ export function createLive(canvas) {
       ctx.save();
       ctx.globalAlpha = m.alpha;
       ctx.fillStyle = toCss(m.col);
+      ctx.shadowColor = toCss(m.col);
+      ctx.shadowBlur = 10;
       if (m.h <= 10 && m.w <= 10) {                 // point
         ctx.fillStyle = css('--bg-deep');
         ctx.beginPath(); ctx.arc(m.cx, m.cy, m.r + 2, 0, Math.PI * 2); ctx.fill();
         ctx.fillStyle = toCss(m.col);
         ctx.beginPath(); ctx.arc(m.cx, m.cy, m.r, 0, Math.PI * 2); ctx.fill();
       } else {
-        roundRect(m.cx - m.w / 2, m.cy - m.h / 2, m.w, m.h, m.r);
+        roundRect(m.cx - m.w / 2, m.cy - m.h / 2, m.w, m.h, Math.max(m.r, 5));
         ctx.fill();
       }
       ctx.restore();
