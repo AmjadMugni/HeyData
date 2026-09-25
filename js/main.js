@@ -1,13 +1,13 @@
 // HeyData — entry
 
-import { createChart } from './chart.js?v=20260925103000';
-import { createLive } from './live.js?v=20260925103000';
-import { initPoll } from './poll.js?v=20260925103000';
-import { takeaway, DATA } from './data.js?v=20260925103000';
-import * as audio from './audio.js?v=20260925103000';
-import { initPipeline, initCounters, initReveal } from './sections.js?v=20260925103000';
-import { initServiceVisuals } from './services.js?v=20260925103000';
-import { cycleHeadline, rollCounters } from './hero.js?v=20260925103000';
+import { createChart } from './chart.js?v=20260925121500';
+import { createLive } from './live.js?v=20260925121500';
+import { initPoll } from './poll.js?v=20260925121500';
+import { takeaway, DATA } from './data.js?v=20260925121500';
+import * as audio from './audio.js?v=20260925121500';
+import { initPipeline, initCounters, initReveal } from './sections.js?v=20260925121500';
+import { initServiceVisuals } from './services.js?v=20260925121500';
+import { cycleHeadline, rollCounters } from './hero.js?v=20260925121500';
 
 const $ = s => document.querySelector(s);
 const $$ = s => Array.from(document.querySelectorAll(s));

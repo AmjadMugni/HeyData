@@ -1,6 +1,6 @@
 // HeyData — hero ka hook: badalti hui headline, counters.
 
-import * as audio from './audio.js?v=20260925103000';
+import * as audio from './audio.js?v=20260925121500';
 
 const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const CHARS = 'abcdefghijklmnopqrstuvwxyz';   // letter-scramble — decode jaisa, glitch jaisa nahi

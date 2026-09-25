@@ -99,8 +99,13 @@
   isolation: isolate;
   min-height: 100svh;
   display: flex;
-  align-items: center;
-  padding-block: calc(76px + var(--space-12)) var(--space-16);
+  align-items: flex-start;
+  padding-block: calc(76px + var(--space-16)) var(--space-16);
+}
+@media (min-width: 960px) {
+  /* bade screens pe visually center karo, lekin kabhi overflow-clip nahi hone dena —
+     'safe' fallback na hone ki soorat mein bhi flex-start hi jeetega agar content lamba ho */
+  .hero { align-items: safe center; }
 }
 .hero::before {
   content: '';

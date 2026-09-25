@@ -2,7 +2,7 @@
 // Teen cuts ek hi canvas pe, aur switch karne par marks ud kar nayi shape banate hain:
 // trend ke points -> bars -> crosstab ke cells. Hover pe readout milta hai.
 
-import { LIVE } from './data.js?v=20260925103000';
+import { LIVE } from './data.js?v=20260925121500';
 
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;

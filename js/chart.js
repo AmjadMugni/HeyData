@@ -7,7 +7,7 @@
 //   760-1400 PRINT     ek scan line guzarti hai aur uske peeche bar "print" hoti hai
 //   1400-1900 LOCK     overshoot settle + number count-up + ring pulse + click
 
-import { rows, DATA, LOW_BASE } from './data.js?v=20260925103000';
+import { rows, DATA, LOW_BASE } from './data.js?v=20260925121500';
 
 const SERIES = ['--series-1', '--series-2', '--series-3', '--series-4'];
 
