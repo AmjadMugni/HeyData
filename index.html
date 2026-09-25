@@ -20,37 +20,15 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="css/tokens.css?v=20260924173500">
-<link rel="stylesheet" href="css/base.css?v=20260924173500">
-<link rel="stylesheet" href="css/layout.css?v=20260924173500">
-<link rel="stylesheet" href="css/components.css?v=20260924173500">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/tokens.css?v=20260925103000">
+<link rel="stylesheet" href="css/base.css?v=20260925103000">
+<link rel="stylesheet" href="css/layout.css?v=20260925103000">
+<link rel="stylesheet" href="css/components.css?v=20260925103000">
 </head>
 <body>
 
 <a class="skip-link" href="#hero">Skip to content</a>
-
-<div class="statusbar" aria-hidden="true">
-  <span class="live">Session live</span>
-  <span class="sb-item">Dataset: demo · n=47</span>
-  <span class="spacer"></span>
-  <span class="sb-item" id="sb-clock">--:--</span>
-  <span class="sb-item">IST · UTC+5:30</span>
-</div>
-
-<div class="rail rail-l" aria-hidden="true">
-  <span class="tickmark top"></span>
-  <span class="rail-text">HeyData · survey data processing · Delhi IST</span>
-  <span class="tickmark bot"></span>
-</div>
-<div class="rail rail-r" aria-hidden="true">
-  <span class="tickmark top"></span>
-  <span class="rail-readout" id="rail-pct">00%</span>
-  <span class="rail-text">scroll depth</span>
-  <span class="rail-progress"><i id="rail-fill"></i></span>
-  <span class="rail-sec" id="rail-sec">hero</span>
-  <span class="tickmark bot"></span>
-</div>
 
 <header class="nav">
   <div class="container nav-inner">
@@ -77,12 +55,6 @@
   <div class="container hero-grid">
 
     <div class="hero-copy">
-      <div class="boot" id="boot" aria-hidden="true">
-        <span class="boot-line" data-text="> mounting dataset · wave_4.sav"></span>
-        <span class="boot-line" data-text="> 847 responses · 112 variables"></span>
-        <span class="boot-line" data-text="> qc: 65 flagged · removed"></span>
-      </div>
-
       <p class="eyebrow">Primary research · Survey data · QC</p>
 
       <h1 class="hero-title">
@@ -177,48 +149,56 @@
         <span class="num">01</span>
         <h3>Data cleaning</h3>
         <p>Duplicates, straightliners, speeders, missing values and open-end tidying — with a short QC note on exactly what was removed and why.</p>
+        <ul class="tags"><li class="tag">Duplicates</li><li class="tag">Straightliners</li><li class="tag">Speeders</li><li class="tag">Open-ends</li></ul>
         <div class="viz" aria-hidden="true"></div>
       </li>
       <li class="service">
         <span class="num">02</span>
         <h3>Formatting &amp; labelling</h3>
         <p>Clean value labels, consistent coding and a variable structure that opens correctly in SPSS, Excel, Q or your platform export.</p>
+        <ul class="tags"><li class="tag">Value labels</li><li class="tag">Coding</li><li class="tag">Variable structure</li></ul>
         <div class="viz" aria-hidden="true"></div>
       </li>
       <li class="service">
         <span class="num">03</span>
         <h3>Validation &amp; QC</h3>
         <p>Quota checks, logic checks, outlier flags and inconsistency reports — before anything gets analysed.</p>
+        <ul class="tags"><li class="tag">Quota checks</li><li class="tag">Logic checks</li><li class="tag">Outlier flags</li></ul>
         <div class="viz" aria-hidden="true"></div>
       </li>
       <li class="service">
         <span class="num">04</span>
         <h3>Logic &amp; routing testing</h3>
         <p>Skip patterns, branching and piping tested against the questionnaire, so every respondent took the path they should have.</p>
+        <ul class="tags"><li class="tag">Skip patterns</li><li class="tag">Branching</li><li class="tag">Piping</li></ul>
         <div class="viz" aria-hidden="true"></div>
       </li>
       <li class="service">
         <span class="num">05</span>
         <h3>Weighting</h3>
         <p>RIM and post-stratification weighting to your target profile, with the efficiency and extreme-weight checks that come with it.</p>
+        <ul class="tags"><li class="tag">RIM</li><li class="tag">Post-stratification</li><li class="tag">Efficiency checks</li></ul>
         <div class="viz" aria-hidden="true"></div>
       </li>
       <li class="service">
         <span class="num">06</span>
         <h3>Cross-tabulation</h3>
         <p>Full banner sets with significance testing, nets, means and indices — in your house table format, not mine.</p>
+        <ul class="tags"><li class="tag">Banner sets</li><li class="tag">Sig testing</li><li class="tag">Nets &amp; means</li></ul>
         <div class="viz" aria-hidden="true"></div>
       </li>
       <li class="service">
         <span class="num">07</span>
         <h3>Chart packs</h3>
         <p>Excel and PowerPoint charts built to your template and brand, ready to drop into the client deck.</p>
+        <ul class="tags"><li class="tag">Excel</li><li class="tag">PowerPoint</li><li class="tag">Your template</li></ul>
         <div class="viz" aria-hidden="true"></div>
       </li>
       <li class="service">
         <span class="num">08</span>
         <h3>Report preparation</h3>
         <p>Summary tables, topline decks and the written read-through that turns the numbers into a finding.</p>
+        <ul class="tags"><li class="tag">Summary tables</li><li class="tag">Topline decks</li><li class="tag">Findings</li></ul>
         <div class="viz" aria-hidden="true"></div>
       </li>
     </ul>
@@ -310,7 +290,7 @@
         <li>Overlap with UK, European and Gulf working hours</li>
         <li>NDA before anything starts, if you want one</li>
       </ul>
-      <p class="tools">SPSS · WinCross · Q · Decipher · Power BI · Excel · PowerPoint</p>
+      <ul class="tools"><li class="tag">SPSS</li><li class="tag">WinCross</li><li class="tag">Q</li><li class="tag">Decipher</li><li class="tag">Power BI</li><li class="tag">Excel</li><li class="tag">PowerPoint</li></ul>
     </div>
   </div>
 </section>
@@ -415,6 +395,6 @@
   </div>
 </footer>
 
-<script type="module" src="js/main.js?v=20260924173500"></script>
+<script type="module" src="js/main.js?v=20260925103000"></script>
 </body>
 </html>

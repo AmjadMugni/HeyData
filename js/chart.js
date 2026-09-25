@@ -7,7 +7,7 @@
 //   760-1400 PRINT     ek scan line guzarti hai aur uske peeche bar "print" hoti hai
 //   1400-1900 LOCK     overshoot settle + number count-up + ring pulse + click
 
-import { rows, DATA, LOW_BASE } from './data.js?v=20260924162000';
+import { rows, DATA, LOW_BASE } from './data.js?v=20260925103000';
 
 const SERIES = ['--series-1', '--series-2', '--series-3', '--series-4'];
 
@@ -165,7 +165,8 @@ export function createChart(canvas, opts = {}) {
     ctx.save();
     ctx.fillStyle = grad;
     ctx.shadowColor = base;
-    ctx.shadowBlur = opts.glow ? 26 : 12;
+    ctx.shadowBlur = opts.glow ? 10 : 3;
+    ctx.shadowOffsetY = 2;
     roundRect(r.x, r.y, r.w, r.h, r.h / 2);
     ctx.fill();
     ctx.restore();

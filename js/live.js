@@ -2,7 +2,7 @@
 // Teen cuts ek hi canvas pe, aur switch karne par marks ud kar nayi shape banate hain:
 // trend ke points -> bars -> crosstab ke cells. Hover pe readout milta hai.
 
-import { LIVE } from './data.js?v=20260924162000';
+import { LIVE } from './data.js?v=20260925103000';
 
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -222,19 +222,21 @@ export function createLive(canvas) {
       ctx.closePath(); ctx.fill();
     });
 
-    // lines — glowing neon stroke
+    // lines — soft depth, not neon
     d.series.forEach((s, si) => {
       const col = css(si === 0 ? '--series-1' : '--series-2');
       ctx.strokeStyle = col;
       ctx.lineWidth = 2.5;
       ctx.lineJoin = 'round';
       ctx.lineCap = 'round';
-      ctx.shadowColor = col;
-      ctx.shadowBlur = 14;
+      ctx.shadowColor = 'rgba(0,0,0,.35)';
+      ctx.shadowBlur = 6;
+      ctx.shadowOffsetY = 2;
       ctx.beginPath();
       s.values.forEach((v, i) => { const x = X(i), y = Y(v); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); });
       ctx.stroke();
       ctx.shadowBlur = 0;
+      ctx.shadowOffsetY = 0;
     });
     ctx.restore();
 
@@ -378,8 +380,9 @@ export function createLive(canvas) {
       ctx.save();
       ctx.globalAlpha = m.alpha;
       ctx.fillStyle = toCss(m.col);
-      ctx.shadowColor = toCss(m.col);
-      ctx.shadowBlur = 10;
+      ctx.shadowColor = 'rgba(0,0,0,.3)';
+      ctx.shadowBlur = 4;
+      ctx.shadowOffsetY = 1;
       if (m.h <= 10 && m.w <= 10) {                 // point
         ctx.fillStyle = css('--bg-deep');
         ctx.beginPath(); ctx.arc(m.cx, m.cy, m.r + 2, 0, Math.PI * 2); ctx.fill();

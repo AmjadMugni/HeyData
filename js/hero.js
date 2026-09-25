@@ -1,40 +1,9 @@
-// HeyData — hero ka hook: boot log, badalti hui headline, counters.
+// HeyData — hero ka hook: badalti hui headline, counters.
 
-import * as audio from './audio.js?v=20260924162000';
+import * as audio from './audio.js?v=20260925103000';
 
 const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const CHARS = '0123456789<>/+=|';   // sirf narrow glyphs — reserve height kam rehti hai
-
-/* ---- boot log: teen lines type hoti hain ---- */
-export function bootLog(onDone) {
-  const lines = Array.from(document.querySelectorAll('.boot-line'));
-  if (!lines.length) { onDone && onDone(); return; }
-
-  if (reduced()) {
-    lines.forEach(l => { l.textContent = l.dataset.text; l.classList.add('done', 'ok'); });
-    onDone && onDone();
-    return;
-  }
-
-  let i = 0;
-  const typeLine = () => {
-    if (i >= lines.length) { onDone && onDone(); return; }
-    const el = lines[i], text = el.dataset.text;
-    let c = 0;
-    const step = () => {
-      el.textContent = text.slice(0, ++c);
-      if (c % 2 === 0) audio.key(0.5);
-      if (c < text.length) setTimeout(step, 14 + Math.random() * 22);
-      else {
-        el.classList.add('done', 'ok');
-        i++;
-        setTimeout(typeLine, 180);
-      }
-    };
-    step();
-  };
-  setTimeout(typeLine, 260);
-}
+const CHARS = 'abcdefghijklmnopqrstuvwxyz';   // letter-scramble — decode jaisa, glitch jaisa nahi
 
 /* ---- headline ka badalta hua hissa ---- */
 const PHRASES = [

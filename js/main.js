@@ -1,15 +1,13 @@
 // HeyData — entry
 
-import { createChart } from './chart.js?v=20260924173500';
-import { createLive } from './live.js?v=20260924173500';
-import { initPoll } from './poll.js?v=20260924173500';
-import { takeaway, DATA } from './data.js?v=20260924173500';
-import * as audio from './audio.js?v=20260924173500';
-import { createAmbient } from './ambient.js?v=20260924173500';
-import { initClock, initPipeline, initCounters, initReveal, initRails } from './sections.js?v=20260924173500';
-import { initServiceVisuals } from './services.js?v=20260924173500';
-import { createBackdrop } from './backdrop.js?v=20260924173500';
-import { bootLog, cycleHeadline, rollCounters } from './hero.js?v=20260924173500';
+import { createChart } from './chart.js?v=20260925103000';
+import { createLive } from './live.js?v=20260925103000';
+import { initPoll } from './poll.js?v=20260925103000';
+import { takeaway, DATA } from './data.js?v=20260925103000';
+import * as audio from './audio.js?v=20260925103000';
+import { initPipeline, initCounters, initReveal } from './sections.js?v=20260925103000';
+import { initServiceVisuals } from './services.js?v=20260925103000';
+import { cycleHeadline, rollCounters } from './hero.js?v=20260925103000';
 
 const $ = s => document.querySelector(s);
 const $$ = s => Array.from(document.querySelectorAll(s));
@@ -35,9 +33,6 @@ links?.addEventListener('click', e => {
 });
 
 /* ---- hero chart ---- */
-const ambientCanvas = $('#hero-ambient');
-if (ambientCanvas) createAmbient(ambientCanvas);
-
 const canvas = $('#hero-canvas');
 const takeawayEl = $('#takeaway');
 const baseEl = $('#chart-base');
@@ -198,27 +193,10 @@ $('#contact-form')?.addEventListener('submit', e => {
 
 /* ---- sections ---- */
 initReveal();
-initClock();
 initCounters();
 initPipeline({ onNode: () => audio.tick() });
 initServiceVisuals();
-initRails();
 
 /* hero ka hook */
-bootLog();
 cycleHeadline();
 rollCounters();
-
-/* backdrop — poori website pe floating data, har section ka apna flavour */
-[
-  ['#hero',     { density: 0.18, alpha: 0.68, flavour: 'stats'  }],
-  ['#services', { density: 0.13, alpha: 0.42, flavour: 'vars'   }],
-  ['#live',     { density: 0.15, alpha: 0.44, flavour: 'stats'  }],
-  ['#process',  { density: 0.16, alpha: 0.50, flavour: 'charts' }],
-  ['#about',    { density: 0.14, alpha: 0.46, flavour: 'stats'  }],
-  ['#faq',      { density: 0.10, alpha: 0.28, flavour: 'vars'   }],
-  ['#contact',  { density: 0.10, alpha: 0.26, flavour: 'charts' }]
-].forEach(([sel, opts]) => {
-  const el = document.querySelector(sel);
-  if (el) createBackdrop(el, opts);
-});
